@@ -34,7 +34,7 @@ export const Header = () => {
                 <FaTimes />
               ) : (
                 <Image
-                  src="/assets/bars.png"
+                  src="/assets/images/bars.png"
                   height={25}
                   width={36}
                   alt="toggle-icon"
@@ -42,7 +42,7 @@ export const Header = () => {
               )}
             </button>
             <Image
-              src="/assets/Logo4.png"
+              src="/assets/images/Logo4.png"
               height={25}
               width={36}
               alt="logo"
@@ -53,7 +53,7 @@ export const Header = () => {
           <div className={styles.menu_buttons}>
             <button>
               <Image
-                src="/assets/search-normal.png"
+                src="/assets/images/search-normal.png"
                 height={24}
                 width={24}
                 alt="search-icon"
@@ -61,7 +61,7 @@ export const Header = () => {
             </button>
             <button>
               <Image
-                src="/assets/heart.png"
+                src="/assets/images/heart.png"
                 height={24}
                 width={24}
                 alt="heart"
@@ -69,7 +69,7 @@ export const Header = () => {
             </button>
             <button>
               <Image
-                src="/assets/shopping-bag.png"
+                src="/assets/images/shopping-bag.png"
                 height={24}
                 width={24}
                 alt="shopping-bag"
@@ -77,7 +77,7 @@ export const Header = () => {
             </button>
             <button>
               <Image
-                src="/assets/profile.png"
+                src="/assets/images/profile.png"
                 height={24}
                 width={24}
                 alt="profile-img"

@@ -39,7 +39,7 @@ export const Footer = () => {
               <Image
                 height={25}
                 width={25}
-                src="/assets/flag.png"
+                src="/assets/images/flag.png"
                 alt="flag"
                 style={{ height: "25px", width: "25px" }}
               />
@@ -100,7 +100,7 @@ export const Footer = () => {
               <h2>mettā muse Accepts</h2>
               <Image
                 alt="payments"
-                src="/assets/payments.png"
+                src="/assets/images/payments.png"
                 height={1000}
                 width={1000}
                 className={styles.payments_image}
