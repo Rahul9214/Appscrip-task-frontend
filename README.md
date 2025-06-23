@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ AppScrip Shop – E-commerce Product Listing UI
 
-## Getting Started
+**AppScrip Shop** is a high-performance and scalable e-commerce product listing web app built using **Next.js (App Router)**, **TypeScript**, **Redux Toolkit**, and modular component architecture. It supports product filtering, sorting, image optimization, and wishlist functionality with a responsive layout.
 
-First, run the development server:
+---
+
+## 🔗 Live Demo
+
+👉 [View Live on Vercel](https://appscrip-task-frontend-hrgq.vercel.app/)
+
+---
+
+## 🚀 Features
+
+✅ Dynamic product list rendering with filtering & sorting  
+✅ Responsive layout (mobile-first)  
+✅ State management via Redux Toolkit  
+✅ Modular & scalable component structure  
+✅ Type safety with TypeScript  
+✅ Clean UI using CSS Modules  
+✅ Optimized for Vercel Deployment  
+
+---
+
+## 🧩 Tech Stack
+
+| Tech               | Description                          |
+|--------------------|--------------------------------------|
+| **Next.js**        | React framework for SSR & routing    |
+| **TypeScript**     | Type safety across components & Redux|
+| **Redux Toolkit**  | Global state management              |
+| **CSS Modules**    | Localized styles for components      |
+| **Vercel**         | Deployment platform (CI/CD Ready)    |
+
+---
+
+## 🏗️ Folder Structure
+
+src/
+├── app/
+│ ├── components/ # Reusable components
+│ ├── hooks/ # Custom hooks
+│ ├── redux/ # Redux store and slices
+│ ├── page.tsx # Landing page
+│ └── layout.tsx # App layout
+├── constants/ # Static constants
+├── types.d.ts # TypeScript types
+public/
+├── assets/ # Static images
+
+
+---
+
+## 📦 Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/Rahul9214/appscrip-task-frontend.git
+cd appscrip-task-frontend
+
+# Install dependencies
+npm install
+
+---
+
+🧪 Running Locally
+bash
+Copy
+Edit
+# Start the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# App will be available at http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🛠️ Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Command	Description
+npm run dev	Start development server
+npm run build	Build production assets
+npm run lint	Run ESLint checks
+npm run start	Start production server
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+📋 Functional Highlights
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Products Listing: Dynamically rendered from Redux store
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Filtering (Ideal For): Filter by Men, Women, Baby & Kids
 
-## Deploy on Vercel
+Sorting Options: Includes Newest, Popular, Price filters
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Like/Dislike: Toggle like state using Redux
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Responsive UI: Fully mobile and desktop compatible
+
+---
+
+
+
+
+
+
