@@ -1,3 +1,5 @@
+"use client";
+
 import { useAppDispatch, useAppSelector } from "../../redux/Store";
 import { idealForOptions } from "@/constants";
 import { ChangeEvent } from "react";
@@ -11,10 +13,13 @@ export const Filter = () => {
 
   const handleIdealForChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    const isOptionPresent = idealFor.indexOf(value);
-    isOptionPresent >= 0
-      ? dispatch(setIdealFor(idealFor.filter((option) => option !== value)))
-      : dispatch(setIdealFor([...idealFor, value]));
+    const isOptionPresent = idealFor.includes(value);
+
+    if (isOptionPresent) {
+      dispatch(setIdealFor(idealFor.filter((option) => option !== value)));
+    } else {
+      dispatch(setIdealFor([...idealFor, value]));
+    }
   };
 
   const handleSelectUnselectAll = () => {
@@ -24,11 +29,15 @@ export const Filter = () => {
 
   return (
     <div className={styles.filterContainer}>
+      {/* Customizable Checkbox (static, non-functional) */}
       <div className={styles.customizableOption}>
         <input type="checkbox" className={styles.checkbox} />
         <span className={styles.customizableText}>Customizable</span>
       </div>
+
       <div className={styles.divider}></div>
+
+      {/* Working Filter: Ideal For */}
       <Accordion
         header="Ideal For"
         defaultOpen={true}
@@ -37,71 +46,31 @@ export const Filter = () => {
         options={idealForOptions}
         handleCheckBoxChange={handleIdealForChange}
       />
-      <div className={styles.divider}></div>
-      <Accordion
-        header="Occasion"
-        defaultOpen={false}
-        selectedFilterValues={[]}
-        handleSelectUnselectAll={() => {}}
-        options={[]}
-        handleCheckBoxChange={() => {}}
-      />
-      <div className={styles.divider}></div>
-      <Accordion
-        header="Work"
-        defaultOpen={false}
-        selectedFilterValues={[]}
-        handleSelectUnselectAll={() => {}}
-        options={[]}
-        handleCheckBoxChange={() => {}}
-      />
+
       <div className={styles.divider}></div>
 
-      <Accordion
-        header="Fabric"
-        defaultOpen={false}
-        selectedFilterValues={[]}
-        handleSelectUnselectAll={() => {}}
-        options={[]}
-        handleCheckBoxChange={() => {}}
-      />
-      <div className={styles.divider}></div>
-      <Accordion
-        header="Segment"
-        defaultOpen={false}
-        selectedFilterValues={[]}
-        handleSelectUnselectAll={() => {}}
-        options={[]}
-        handleCheckBoxChange={() => {}}
-      />
-      <div className={styles.divider}></div>
-      <Accordion
-        header="Suitable For"
-        defaultOpen={false}
-        selectedFilterValues={[]}
-        handleSelectUnselectAll={() => {}}
-        options={[]}
-        handleCheckBoxChange={() => {}}
-      />
-      <div className={styles.divider}></div>
-      <Accordion
-        header="Raw Material"
-        defaultOpen={false}
-        selectedFilterValues={[]}
-        handleSelectUnselectAll={() => {}}
-        options={[]}
-        handleCheckBoxChange={() => {}}
-      />
-      <div className={styles.divider}></div>
-      <Accordion
-        header="Pattern"
-        defaultOpen={false}
-        selectedFilterValues={[]}
-        handleSelectUnselectAll={() => {}}
-        options={[]}
-        handleCheckBoxChange={() => {}}
-      />
-      <div className={styles.divider}></div>
+      {/* Placeholder Accordion Sections */}
+      {[
+        "Occasion",
+        "Work",
+        "Fabric",
+        "Segment",
+        "Suitable For",
+        "Raw Material",
+        "Pattern",
+      ].map((section) => (
+        <div key={section}>
+          <Accordion
+            header={section}
+            defaultOpen={false}
+            selectedFilterValues={[]}
+            handleSelectUnselectAll={() => {}}
+            options={[]}
+            handleCheckBoxChange={() => {}}
+          />
+          <div className={styles.divider}></div>
+        </div>
+      ))}
     </div>
   );
 };

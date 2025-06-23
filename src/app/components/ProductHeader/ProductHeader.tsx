@@ -13,17 +13,17 @@ import { useEffect } from "react";
 export const ProductsHeader = () => {
   const { sortFilter, isFilterOpen } = useAppSelector((state) => state.filter);
   const { width } = useScreenSize();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (width < 800) {
       dispatch(toggleFilter(false));
     }
-  }, [width]);
+  }, [width, dispatch]);
 
   const products = useAppSelector((state) =>
     selectSortedProducts(state, sortFilter)
   );
-  const dispatch = useAppDispatch();
   const setSelectedValue = (value: string) => {
     dispatch(setSortFilter(value));
   };
